@@ -22,13 +22,11 @@
   </div>
 
 
-<%= radio_button_tag(:role, "volunteer") %>
-<%= label_tag(:age_child, "I am a volunteer") %>
-<%= radio_button_tag(:role, "charity") %>
-<%= label_tag(:age_adult, "I'm looking for a volunteer") %>
-</br>
+<div onclick="volunteerFunction()">I want to be a volunteer</div>
+<div onclick="charityFunction()">I need a volunteer</div>
 
  <h3> Details </h3>
+<div id="volunteerForm" style= "display:none;">
 
   <div class ="field">
     <%= f.label :first_name %>
@@ -55,7 +53,7 @@
       <%= f.label :street %>
       <%= f.text_field :street %>
     </div>
-    
+
   <div class ="field">
     <%= f.label :city %>
     <%= f.text_field :city %>
@@ -72,8 +70,68 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "Sign up", name: "role", value: "volunteer" %>
   </div>
+</div>
+<div id = "charityForm" style= "display:none;">
+
+    <div class ="field">
+      <%= f.label :business_name %>
+      <%= f.text_field :business_name %>
+    </div>
+
+    <div class ="field">
+      <%= f.label :phone %>
+      <%= f.text_field :phone %>
+    </div>
+
+
+    <div class ="field">
+      <%= f.label :bio %></br>
+      <%= f.text_area :bio, size: "24x6" %>
+    </div>
+
+      <div class ="field">
+        <%= f.label :street %>
+        <%= f.text_field :street %>
+      </div>
+
+    <div class ="field">
+      <%= f.label :city %>
+      <%= f.text_field :city %>
+    </div>
+
+    <div class ="field">
+      <%= f.label :country %>
+      <%= f.text_field :country %>
+    </div>
+
+    <div class ="field">
+      <%= f.label :postcode %>
+      <%= f.text_field :postcode %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Sign up", name: "role", value: "charity" %>
+    </div>
+</div>
 <% end %>
 
+
+<script>
+    var v = document.getElementById("volunteerForm");
+    var c = document.getElementById("charityForm");
+function volunteerFunction() {
+    if (v.style.display === "none") {
+        v.style.display = "block";
+        c.style.display = "none";
+    }
+}
+function charityFunction() {
+    if (c.style.display === "none") {
+        c.style.display = "block";
+        v.style.display = "none";
+    }
+}
+</script>
 <%= render "devise/shared/links" %>
