@@ -7,8 +7,16 @@ class User < ApplicationRecord
 
   after_create :assign_chosen_role
 
-def assign_chosen_role
 
+def full_name
+  self.first_name << " " << self.last_name
+end
+
+def full_address
+  self.street << ", " << self.city << ", " << self.country << ", " << self.postcode
+end
+
+def assign_chosen_role
   self.add_role(self.chosen_role) if self.roles.blank?
 end
 end
