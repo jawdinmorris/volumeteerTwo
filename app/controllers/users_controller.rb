@@ -11,10 +11,10 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    if @user.has_role? :volunteer then
+    if @user.has_role? :volunteer
       render 'volunteer_show'
   else
-    render 'charity_show'
+      render 'charity_show'
   end
   end
 
