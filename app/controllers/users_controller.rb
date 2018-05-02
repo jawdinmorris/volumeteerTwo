@@ -4,12 +4,18 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @volunteers = User.with_role(:volunteer)
+    @charities = User.with_role(:charity)
   end
 
   # GET /users/1
   # GET /users/1.json
   def show
+    if @user.has_role? :volunteer then
+      render 'volunteer_show'
+  else
+    render 'charity_show'
+  end
   end
 
   # GET /users/new
