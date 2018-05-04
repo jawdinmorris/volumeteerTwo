@@ -15,6 +15,7 @@
     <% @jobs.each do |job| %>
       <tr>
         <td><%= job.name %></td>
+        <td><%= job.description %></td>
         <td><%= job.street %></td>
         <td><%= link_to 'Show', job %></td>
       </tr>
