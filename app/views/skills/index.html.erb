@@ -1,0 +1,17 @@
+<h1> <%= current_user.full_name %>'s skills page </h1>
+
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Delete?</th>
+  </tr>
+  <% @skills.each do |skill| %>
+  <tr>
+    <td><%= skill.name %></td>
+    <td><%= link_to 'Delete',  skill,  method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+  <% end %>
+</table>
+
+<%= link_to 'New Skill?', new_skill_path %>
