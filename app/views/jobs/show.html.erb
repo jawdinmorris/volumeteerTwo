@@ -9,6 +9,8 @@
   <strong>Street:</strong>
   <%= @job.street %>
 </p>
+<% if @job.user_id == current_user.id %>
+<%= link_to 'Edit', edit_job_path(@job) %>
+<%end %>
 
-<%= link_to 'Edit', edit_job_path(@job) %> |
 <%= link_to 'Back', jobs_path %>
