@@ -12,7 +12,9 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     if @user.has_role? :volunteer
+      @skills = @user.skills.all
       render 'volunteer_show'
+
   else
       render 'charity_show'
   end
