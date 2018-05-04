@@ -15,7 +15,8 @@ class UsersController < ApplicationController
       @skills = @user.skills.all
       render 'volunteer_show'
 
-  else
+  elsif @user.has_role? :charity
+      @jobs = @user.jobs.all
       render 'charity_show'
   end
   end
