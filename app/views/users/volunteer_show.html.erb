@@ -9,6 +9,13 @@
 <% @skills.each do |skill| %>
 <p><%=  skill.name  %> </p>
 <%end%>
+
+<h3> Events: </h3>
+<% @jobs.each do |job| %>
+<p><%=  job.name  %> </p>
+<%end%>
+
+
 <% if @user == current_user  %>
 <%= link_to 'Edit Skills', skills_path %>
 <%= link_to 'Edit', edit_user_registration_path(@user) %>

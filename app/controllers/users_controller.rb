@@ -13,10 +13,11 @@ class UsersController < ApplicationController
   def show
     if @user.has_role? :volunteer
       @skills = @user.skills.all
+      @jobs =  Job.includes(:users).where(users: { id: @user.id })
       render 'volunteer_show'
 
   elsif @user.has_role? :charity
-      @jobs = @user.jobs.all
+      @jobs = Job.where("user_id = ? ", @user.id)
       render 'charity_show'
   end
   end

@@ -9,6 +9,17 @@
   <strong>Street:</strong>
   <%= @job.street %>
 </p>
+
+
+<h3> VOlunteers </h3>
+<% @volunteers.each do |volunteer| %>
+<p> <%= volunteer.full_name %> </p>
+<% end %>
+
+<% unless @volunteers.include?(current_user) || current_user.has_role?(:charity) %>
+   <%= link_to 'Express Interest', volunteer_jobs_path(@job) %>
+<% end %>
+
 <% if @job.user_id == current_user.id %>
 <%= link_to 'Edit', edit_job_path(@job) %>
 <%end %>
