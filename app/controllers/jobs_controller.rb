@@ -10,6 +10,7 @@ class JobsController < ApplicationController
   # GET /jobs/1
   # GET /jobs/1.json
   def show
+    @volunteers = @job.users.with_role(:volunteer)
   end
 
   # GET /jobs/new
@@ -24,10 +25,8 @@ class JobsController < ApplicationController
   # POST /jobs
   # POST /jobs.json
   def create
-    @user = current_user
     @job = Job.new(job_params)
-    @job.save
-    current_user.jobs << @job
+    @job.user = current_user
     @job.save
     respond_to do |format|
       if @job.save
@@ -61,6 +60,15 @@ class JobsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to jobs_url, notice: 'Job was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def volunteer
+    id =  request.url.chars.last
+    @job = Job.find(id)
+    unless @job.users.include?(current_user)
+      @job.users << current_user
+      redirect_to action: :index
     end
   end
 
