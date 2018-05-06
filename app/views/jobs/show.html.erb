@@ -1,17 +1,19 @@
 <p id="notice"><%= notice %></p>
 
+<h1> <%= @job.name %> </h1>
+<h2> By <%= @job.user.business_name %> </h2>
+
 <p>
-  <strong>Name:</strong>
-  <%= @job.name %>
+  <strong>Description:</strong> </br>
+  <%= @job.description %>
 </p>
 
 <p>
-  <strong>Street:</strong>
-  <%= @job.street %>
+  <strong>Address:</strong> </br>
+  <%= @job.full_address %>.
 </p>
 
-
-<h3> VOlunteers </h3>
+<h3> Volunteers (<%= @job.volunteers_needed %> needed) </h3>
 <% @volunteers.each do |volunteer| %>
 <p> <%= volunteer.full_name %> </p>
 <% end %>
