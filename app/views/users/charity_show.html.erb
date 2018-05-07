@@ -18,6 +18,27 @@
 <p> <%= link_to 'Show More', job_path(job) %> </p>
 <%end%>
 <% if @user == current_user  %>
+<%unless @user.has_role? :premium %>
+<%= form_tag charges_path(:user => current_user.id) do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <label class="amount">
+      <span>Amount: $5.00</span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="A month's subscription"
+          data-amount="500"
+          data-locale="auto"
+          data-id="<%=@user.id%>"></script>
+<% end %>
+<%end%>
 <%= link_to 'Edit Profile', edit_user_registration_path(@user) %>
 <%= link_to 'New Jobs', new_job_path %>
 <% end %>

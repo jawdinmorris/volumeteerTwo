@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       @jobs =  Job.includes(:users).where(users: { id: @user.id })
       render 'volunteer_show'
 
-  elsif @user.has_role? :charity
+  elsif @user.has_role? :charity || :premium_charity
       @jobs = Job.where("user_id = ? ", @user.id)
       render 'charity_show'
   end
@@ -69,6 +69,14 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def premium_purchase
+    @user = User.find(params[:user])
+    if @user.has_role? :charity
+      @user.add_role(:premium)
+    end
+    redirect_to @user
   end
 
   private
