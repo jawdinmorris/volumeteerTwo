@@ -1,10 +1,11 @@
 class Job < ApplicationRecord
   belongs_to :user
   has_and_belongs_to_many :users
-
+  geocoded_by :full_address
+  after_validation :geocode
 
 def full_address
-  self.street << ", " << self.city << ", " << self.country << ", " << self.postcode.to_s
+  "#{street}, #{city}, #{country}, #{postcode.to_s}"
 end
 
 

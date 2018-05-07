@@ -9,23 +9,25 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  after_create :assign_chosen_role, :send_welcome_email
+  after_create :assign_chosen_role
+  # , :send_welcome_email
 
   mount_uploader :image, UserImageUploader
-  geocoded_by :full_address   
+  geocoded_by :full_address
   after_validation :geocode
 
 
 def full_name
   if self.has_role? :volunteer
-    self.first_name + " " + self.last_name
+  "#{first_name} #{last_name}"
   elsif self.has_role? :charity
-  self.business_name
+  "#{business_name}"
   end
 end
 
+
 def full_address
-  self.street << ", " << self.city << ", " << self.country << ", " << self.postcode.to_s
+  "#{street}, #{city}, #{country}, #{postcode.to_s}"
 end
 
 def assign_chosen_role
