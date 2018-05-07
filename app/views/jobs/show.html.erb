@@ -8,11 +8,19 @@
   <strong>Description:</strong> </br>
   <%= @job.description %>
 </p>
-
+<iframe
+  width="600"
+  height="450"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=<%=ENV['MAPS_KEY']%>
+    &q=<%=@job.latitude%>,<%=@job.longitude%>" allowfullscreen>
+</iframe>
 <p>
   <strong>Address:</strong> </br>
   <%= @job.full_address %>.
 </p>
+
+
 
 <h3> Volunteers (<%= @job.volunteers_needed %> needed) </h3>
 <% @volunteers.each do |volunteer| %>
