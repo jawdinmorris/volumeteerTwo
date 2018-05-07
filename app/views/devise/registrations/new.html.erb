@@ -73,6 +73,12 @@
   <div class = "field">
     <%= f.hidden_field :chosen_role, value: "volunteer" %>
   </div>
+
+      <div class="field">
+        <%= f.label :image %>
+        <%= f.file_field :image%>
+      </div>
+      
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
@@ -140,6 +146,11 @@
 
     <div class = "field">
       <%= f.hidden_field :chosen_role, value: "charity" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :image %>
+      <%= f.file_field :image%>
     </div>
 
     <div class="actions">

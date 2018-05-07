@@ -28,7 +28,7 @@
 
 
   <h3> Details </h3>
-
+<% if current_user.has_role? :volunteer %>
    <div class ="field">
      <%= f.label :first_name %>
      <%= f.text_field :first_name %>
@@ -38,7 +38,12 @@
      <%= f.label :last_name %>
      <%= f.text_field :last_name %>
    </div>
-
+<% elsif current_user.has_role? :charity %>
+<div class ="field">
+  <%= f.label :business_name %>
+  <%= f.text_field :business_name %>
+</div>
+<%end%>
    <div class ="field">
      <%= f.label :phone %>
      <%= f.text_field :phone %>
@@ -70,7 +75,16 @@
      <%= f.text_field :postcode %>
    </div>
 
-   
+   <div class="field">
+  <%= f.label :image %><br>
+  <%= f.file_field :image %>
+  <% if f.object.image? %>
+    <%= image_tag f.object.image.thumb.url %>
+    <%= f.label :remove_image %>
+    <%= f.check_box :remove_image %>
+  <% end %>
+</div>
+
   <div class="field">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
