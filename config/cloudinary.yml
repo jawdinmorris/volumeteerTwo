@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: jordanmorris
+  api_key: '713773441974457'
+  api_secret: Ts69MNB29kMirjvDxDBN23nDm58
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: jordanmorris
+  api_key: '713773441974457'
+  api_secret: Ts69MNB29kMirjvDxDBN23nDm58
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: jordanmorris
+  api_key: '713773441974457'
+  api_secret: Ts69MNB29kMirjvDxDBN23nDm58
+  enhance_image_tag: true
+  static_image_support: false

@@ -11,6 +11,7 @@ class User < ApplicationRecord
 
   after_create :assign_chosen_role
 
+  mount_uploader :image, UserImageUploader
 
 def full_name
   self.first_name << " " << self.last_name

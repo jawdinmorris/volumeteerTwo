@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 <h1> <%= @user.full_name %> </h1>
+<%= image_tag @user.image_url , size: "100x150"%>
 <h3> About Me: </h3>
 <div> <%= @user.bio %>
 <h3> Further Details: </h3>
@@ -12,12 +13,12 @@
 
 <h3> Events: </h3>
 <% @jobs.each do |job| %>
-<p><%=  job.name  %> </p>
+<p><%= link_to "#{job.name}", job_path(job) %></p>
 <%end%>
 
 
 <% if @user == current_user  %>
 <%= link_to 'Edit Skills', skills_path %>
-<%= link_to 'Edit', edit_user_registration_path(@user) %>
+<%= link_to 'Edit Profile', edit_user_registration_path(@user) %>
 <% end %>
 <%= link_to 'Back', users_path %>
