@@ -41,6 +41,8 @@ gem 'cloudinary'
 gem 'simple_form'
 
 gem 'mailgun-ruby', '~>1.1.6'
+gem 'geocoder'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

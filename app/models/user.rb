@@ -12,6 +12,9 @@ class User < ApplicationRecord
   after_create :assign_chosen_role, :send_welcome_email
 
   mount_uploader :image, UserImageUploader
+  geocoded_by :full_address   
+  after_validation :geocode
+
 
 def full_name
   if self.has_role? :volunteer
