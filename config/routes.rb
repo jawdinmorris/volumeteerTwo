@@ -4,10 +4,10 @@ Rails.application.routes.draw do
 
   resources :jobs do
     collection do
-      get :volunteer
+      get :volunteer, :volunteer_remove
     end
   end
-  
+
   get 'job/index'
 
   devise_for :users
