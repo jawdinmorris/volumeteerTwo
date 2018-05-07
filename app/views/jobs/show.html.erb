@@ -2,6 +2,7 @@
 
 <h1> <%= @job.name %> </h1>
 <h2> By <%= @job.user.business_name %> </h2>
+<h2> <%= @job.user.email %> <h2>
 
 <p>
   <strong>Description:</strong> </br>
@@ -15,11 +16,15 @@
 
 <h3> Volunteers (<%= @job.volunteers_needed %> needed) </h3>
 <% @volunteers.each do |volunteer| %>
-<p> <%= volunteer.full_name %> </p>
+<p> <%= volunteer.full_name %>
+<% if volunteer == current_user || current_user == @job.user %>
+<sup> <%= link_to 'Withdraw', volunteer_remove_jobs_path(:volunteer => volunteer.id, :job => @job.id) %> </sup>
+<% end %>
+</p>
 <% end %>
 
-<% unless @volunteers.include?(current_user) || current_user.has_role?(:charity) %>
-   <%= link_to 'Express Interest', volunteer_jobs_path(@job) %>
+<% unless @volunteers.include?(current_user) || current_user.has_role?(:charity) || @job.volunteers_needed == 0 %>
+   <%= link_to 'Express Interest', volunteer_jobs_path(:job => @job.id) %>
 <% end %>
 
 <% if @job.user_id == current_user.id %>

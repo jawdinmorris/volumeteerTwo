@@ -64,12 +64,24 @@ class JobsController < ApplicationController
   end
 
   def volunteer
-    id =  request.url.chars.last
-    @job = Job.find(id)
+    @job = Job.find(params[:job])
     unless @job.users.include?(current_user)
       @job.users << current_user
-      redirect_to action: :index
+      @job.volunteers_needed -= 1
+      @job.save
+      redirect_to @job
     end
+  end
+
+  def volunteer_remove
+    id =  request.url.chars.last
+
+    @volunteer = User.find(params[:volunteer])
+    @job = Job.find(params[:job])
+    @job.users.delete(@volunteer)
+    @job.volunteers_needed += 1
+    @job.save
+    redirect_to @job
   end
 
   private
