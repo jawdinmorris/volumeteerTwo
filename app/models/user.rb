@@ -32,6 +32,23 @@ end
 
 def assign_chosen_role
   self.add_role(self.chosen_role) if self.roles.blank?
+  if self.has_role? :volunteer
+    self.volunteer_cap = 0
+    self.job_cap = 0
+    self.save
+    puts "Youre a volunteer"
+  elsif self.has_role :premium
+    self.volunteer_cap = 8
+    self.job_cap = 6
+    puts "Charity"
+    self.save
+  elsif self.has_role? :charity
+    self.volunteer_cap = 4
+    self.job_cap = 3
+    puts "Charity"
+    self.save
+    puts "Charity cap implemented"
+  end
 end
 
 def send_welcome_email

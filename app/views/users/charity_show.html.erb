@@ -18,6 +18,9 @@
 <p> <%= link_to 'Show More', job_path(job) %> </p>
 <%end%>
 <% if @user == current_user  %>
+<%unless @user.has_role? :premium %>
+<%= link_to 'Become a Premium Member', premium_purchase_users_path(:user => @user.id) %>
+<%end%>
 <%= link_to 'Edit Profile', edit_user_registration_path(@user) %>
 <%= link_to 'New Jobs', new_job_path %>
 <% end %>

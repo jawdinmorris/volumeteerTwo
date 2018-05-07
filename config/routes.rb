@@ -11,7 +11,11 @@ Rails.application.routes.draw do
   get 'job/index'
 
   devise_for :users
-  resources :users
+  resources :users do
+    collection do
+      get :premium_purchase
+    end
+  end
   resources :skills
 
 
