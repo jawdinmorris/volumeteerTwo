@@ -7,8 +7,8 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+    <!-- NAVBAR -->
    <div class="ui menu">
      <div class="header item">
        Volumeteer
@@ -24,6 +24,35 @@
        <% end %>
      </div>
    </div>
+
     <%= yield %>
+    <div class="ui inverted vertical footer segment">
+    <div class="ui container">
+      <div class="ui stackable inverted divided equal height stackable grid">
+        <div class="three wide column">
+          <h4 class="ui inverted header">Quick links</h4>
+          <div class="ui inverted link list">
+            <%= link_to "Login", new_user_session_path, class: "item" %>
+            <%= link_to "Register", new_user_registration_path, class: "item" %>
+            <%= link_to "Home", root_path, class: "item" %>
+            <%= link_to "Jobs", jobs_path, class: "item" %>
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header">Development</h4>
+          <div class="ui inverted link list">
+            <a href="https://github.com/jawdinmorris/volumeteerTwo" class="item">Github</a>
+            <a href="https://twitter.com/JawdinMorris" class="item">Twitter</a>
+          </div>
+        </div>
+        <div class="seven wide column">
+          <h4 class="ui inverted header">Thank You For Using Volumeteer</h4>
+          <p>Together average australians are making a true difference.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
   </body>
 </html>
