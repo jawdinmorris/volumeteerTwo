@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show]
-
+  before_action :authenticate_user!
+  before_action :authenticate_charity, only: [:premium_purchase]
   # GET /users
   # GET /users.json
   def index
@@ -79,6 +80,9 @@ class UsersController < ApplicationController
     redirect_to @user
   end
 
+  def authenticate_charity
+    redirect_to root_path, alert: 'You must be a charity to do this.' unless current_user.has_role?(:charity)
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user

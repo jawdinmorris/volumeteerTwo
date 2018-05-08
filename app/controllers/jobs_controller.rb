@@ -1,5 +1,8 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: [:show, :index]
+  before_action :authenticate_volunteer, only: [:volunteer, :volunteer_remove]
 
   # GET /jobs
   # GET /jobs.json
@@ -84,6 +87,10 @@ class JobsController < ApplicationController
     @job.volunteers_needed += 1
     @job.save
     redirect_to @job
+  end
+
+  def authenticate_volunteer
+    redirect_to root_path, alert: 'You must be a volunteer to do this.' unless current_user.has_role?(:volunteer)
   end
 
   private
