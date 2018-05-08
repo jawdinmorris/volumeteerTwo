@@ -2,6 +2,22 @@
 
 <h1>Jobs</h1>
 
+<%= search_form_for @q do |f| %>
+
+  # Search if the name field contains...
+  <%= f.label :name_cont %>
+  <%= f.search_field :name_cont %>
+
+  # Search if an associated jobs.description starts with...
+  <%= f.label :description_start %>
+  <%= f.search_field :description_start %>
+
+  # Attributes may be chained. Search multiple attributes for one value...
+  <%= f.label :name_or_description_cont %>
+  <%= f.search_field :name_or_description_cont %>
+
+  <%= f.submit %>
+<% end %>
 <table>
   <thead>
     <tr>
