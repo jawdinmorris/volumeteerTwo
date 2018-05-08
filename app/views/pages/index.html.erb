@@ -1,1 +1,81 @@
-<h1> Home Page! </h1>
+<!-- HEADER -->
+<%= stylesheet_link_tag "homepage" %>
+<div class="pusher">
+  <div class="ui inverted vertical masthead center aligned segment">
+    <div class="ui text container">
+      <h1 class="ui inverted header">
+        Volumeteer Australia
+      </h1>
+      <h2>Many Things With Many Hands</h2>
+      <div><%= link_to "Register <i class='right arrow icon'></i>".html_safe, new_user_registration_path, class: "ui huge primary button" %> </div>
+    </div>
+  </div>
+
+<!-- ABOUT US -->
+<div class="ui vertical stripe quote segment">
+  <div class="ui equal width stackable internally celled grid">
+    <div class="center aligned row">
+      <div class="column">
+        <h3>"Volumeteer made it easy for me to find a valuable use for my spare time.
+          I used to sit at home thinking of fake quotes for the internet. Life's completely different
+          since Volumeteer came along."</h3>
+        <p>- A Trustworthy Guy</p>
+      </div>
+      <div class="column">
+        <h3>"As a real, human, australian I can say Volumeteer is the best"</h3>
+        <p>
+          <%= image_tag("/assets/public/Bean.jpg", class: "ui tiny avatar image") %> - Captain Bean
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- VIEW JOBS -->
+<div class="ui vertical stripe segment">
+  <div class="ui middle aligned stackable grid container">
+    <div class="row">
+      <div class="eight wide column">
+        <h3 class="ui header">We Connect Volunteers and Charities</h3>
+        <p>Whether you're looking for a way to spend a couple hours or you're looking for a long term commitment we can help.</p>
+        <p>If you're searching for volunteers to help out at your next event find plenty of skilled volunteers today </p>
+        <h3 class="ui header">We Have Opportunities Waiting Now</h3>
+        <p>Find the right opportunity for you now.</p>
+      </div>
+      <div class="six wide right floated column">
+        <%= image_tag("/assets/public/Chess.jpg", class: "ui large bordered rounded image") %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="center aligned column">
+        <%= link_to "Check Out Jobs", jobs_path, class: "ui huge button" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+ $(document)
+   .ready(function() {
+
+     // fix menu when passed
+     $('.masthead')
+       .visibility({
+         once: false,
+         onBottomPassed: function() {
+           $('.fixed.menu').transition('fade in');
+         },
+         onBottomPassedReverse: function() {
+           $('.fixed.menu').transition('fade out');
+         }
+       })
+     ;
+
+     // create sidebar and attach to menu open
+     $('.ui.sidebar')
+       .sidebar('attach events', '.toc.item')
+     ;
+
+   })
+ ;
+ </script>
