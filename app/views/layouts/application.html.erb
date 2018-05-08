@@ -9,19 +9,21 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
- <ul>
-   <% if current_user.nil? %>
-   <li><%= link_to "Login", new_user_session_path %> </li>
-   <li><%= link_to "Register", new_user_registration_path %> </li>
-   <% else %>
-   <li> <%= link_to "Profile", user_path(current_user.id) %> </li>
-   <li> <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-   <li> <%= link_to "Jobs", jobs_path %> </li>
-   <li> <%= link_to "Users", users_path %> </li>
-   <% end %>
- </ul>
+   <div class="ui menu">
+     <div class="header item">
+       Volumeteer
+     </div>
+     <%= link_to "Jobs", jobs_path, class: "item" %>
+     <div class="right menu">
+       <% if current_user.nil? %>
+        <%= link_to "Login", new_user_session_path, class: "item" %>
+        <%= link_to "Register", new_user_registration_path, class: "item" %>
+       <% else %>
+        <%= link_to "Profile", user_path(current_user.id), class: "item" %>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "item" %>
+       <% end %>
+     </div>
+   </div>
     <%= yield %>
   </body>
 </html>
