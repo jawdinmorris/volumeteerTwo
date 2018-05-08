@@ -10,9 +10,7 @@
   <body>
     <!-- NAVBAR -->
    <div class="ui menu">
-     <div class="header item">
-       Volumeteer
-     </div>
+     <%= link_to "Volumeteer", root_path, class: "header item" %>
      <%= link_to "Jobs", jobs_path, class: "item" %>
      <div class="right menu">
        <% if current_user.nil? %>
