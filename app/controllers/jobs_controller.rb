@@ -5,6 +5,8 @@ class JobsController < ApplicationController
   # GET /jobs.json
   def index
     @jobs = Job.all
+    @q = Job.ransack(params[:q])
+    @jobs = @q.result(distinct: true)
   end
 
   # GET /jobs/1
