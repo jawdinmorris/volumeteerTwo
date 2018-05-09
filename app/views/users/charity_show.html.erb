@@ -1,22 +1,60 @@
 <p id="notice"><%= notice %></p>
-<h1> <%= @user.business_name %> </h1>
-<h3> About Us: </h3>
-<div> <%= @user.bio %>
-<h3> Further Details: </h3>
-<p> <strong> Email: </strong> <%= @user.email %> </p>
-<p> <strong> Address: </strong> <%= @user.full_address %> </p>
-<iframe
-  width="600"
-  height="450"
-  frameborder="0" style="border:0"
-  src="https://www.google.com/maps/embed/v1/place?key=<%=ENV['MAPS_KEY']%>
-    &q=<%=@user.latitude%>,<%=@user.longitude%>" allowfullscreen>
-</iframe>
-<h3> Jobs: </h3>
-<% @jobs.each do |job| %>
-<p><%=  job.name  %> </p>
-<p> <%= link_to 'Show More', job_path(job) %> </p>
-<%end%>
+
+<div class = "ui very padded container segment">
+
+<div class="ui grid">
+  <div class="six wide column">
+    <div>
+    <%= image_tag(@user.image_url, :class => "ui centered medium circular image")%>
+  </div>
+  <% if @user == current_user  %>
+  <br>
+  <%= link_to 'Edit Profile', edit_user_registration_path(@user), class: "fluid ui small blue button center align" %>
+  <% end %>
+  <br>
+  <p>Google Maps: </p>
+  <iframe
+    width="300"
+    height="300"
+    frameborder="0" style="border:0"
+    src="https://www.google.com/maps/embed/v1/place?key=<%=ENV['MAPS_KEY']%>
+      &q=<%=@user.latitude%>,<%=@user.longitude%>" allowfullscreen>
+  </iframe>
+ </div>
+  <div class = "ten wide column">
+    <h1> <%= @user.full_name %> </h1>
+
+    <h3>About Me: </h3>
+    <div> <%= @user.bio %>  </div>
+    <h3>Further Details: </h3>
+    <p> <strong> Email: </strong> <%= @user.email %> </p>
+    <p> <strong> Address: </strong> <%= @user.full_address %> </p>
+    <br>
+    <div class="ui grid">
+      <div class="sixteen wide column">
+    <h3>Events: </h3>
+    <div class="ui grid">
+    <% @jobs.each do |job| %>
+    <div class="eight wide column">
+    <p><strong><%=  job.name  %></strong></p>
+    </div>
+    <div class="eight wide column">
+    <p><%= link_to "View Job..", job_path(job) %></p>
+    <%end%>
+    </div>
+    </div>
+  </br>
+    <%= link_to 'New Jobs', new_job_path, class: "ui small blue button" %>
+    </div>
+    </div>
+
+</div>
+</div>
+
+
+</div>
+
+
 <% if @user == current_user  %>
 <%unless @user.has_role? :premium %>
 <%= form_tag charges_path(:user => current_user.id) do %>
@@ -40,6 +78,6 @@
 <% end %>
 <%end%>
 <%= link_to 'Edit Profile', edit_user_registration_path(@user) %>
-<%= link_to 'New Jobs', new_job_path %>
+
 <% end %>
 <%= link_to 'Back', users_path %>
