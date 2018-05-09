@@ -1,26 +1,44 @@
+# INSTALLATION
+
+* Ruby version  
+~ruby 2.3.3p222
+
+* Configuration  
+  You will need to create .env file found in the root folder as they have been excluded in .gitignore for security.  
+  Instructions for installation:  
+
+  Clone the repo then change into the directory.  
+Run ```bundle install``` in terminal.  
+Run ```rails db:migrate``` in terminal.  
+Find and edit the .env file in the root of the directory, then add your own ENV variables:    
+```CLOUDINARY_KEY=  
+CLOUDINARY_SECRET=
+MAILGUN_DOMAIN=
+MAILGUN_USER=
+MAILGUN_PASSWORD=
+STRIPE_PUBLISHABLE_KEY=
+STRIPE_SECRET_KEY=
+MAPS_KEY=```
+
+
+
 # Design Document
-## Design Checklist
-* ~~README~~
-* ~~Problem Definition~~  
-  * ~~Market Research~~
-* ~~Problem Solution~~  
-  * ~~Ethical Considerations~~
-* ~~USER STORIES~~
-  * ~~Volunteer~~  
-  * ~~Charity~~  
-  * ~~Premium Charity~~  
-* ~~WORKFLOW~~
-  * ~~User Diagram~~
-* ~~WIREFRAMES~~
-  * ~~Home~~  
-  * ~~User Profile~~  
-  * ~~Charity Profile~~  
-  * ~~Jobs Index~~  
-  * ~~Show Jobs~~  
-* ~~ERD~~
-* ~~Design Decisions~~
-* ~~Agile Workflow Timetable~~
-* ~~Get Signed Off~~
+## Design Contents
+* Problem Definition  
+* Problem Solution  
+  * Proposed Solution
+  * Ethical Considerations
+* User Stories
+* Flowcharts
+  * Volunteer Interaction
+  * Charity Interaction
+* Wireframes
+  * Desktop  
+  * Mobile
+* ERD
+* Design Decisions
+* Agile Workflow Timetable
+
 
 ## PROBLEM DEFINITION
 
@@ -98,30 +116,3 @@
    ![alt text][agile_pic]
 
    [agile_pic]:docs/images/agileFlow.PNG "Agile Timetable"
-
-
-
-
-# DEPLOYMENT BELOW
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
