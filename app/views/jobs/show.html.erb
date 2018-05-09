@@ -34,18 +34,23 @@
 <h3> Volunteers (<%= @job.volunteers_needed %> needed) </h3>
 <% @volunteers.each do |volunteer| %>
 <p> <%= link_to "#{volunteer.full_name}", volunteer %> </h2>
+  <% unless current_user.nil? %>
 <% if volunteer == current_user || current_user == @job.user %>
 <sup> <%= link_to 'Withdraw', volunteer_remove_jobs_path(:volunteer => volunteer.id, :job => @job.id) %> </sup>
 <% end %>
+<% end %>
 </p>
 <% end %>
-
+<% unless current_user.nil? %>
 <% unless @volunteers.include?(current_user) || current_user.has_role?(:charity) || @job.volunteers_needed == 0 %>
    <%= link_to 'Express Interest', volunteer_jobs_path(:job => @job.id) %>
 <% end %>
+<% end %>
+<% unless current_user.nil? %>
 <% if @job.user_id == current_user.id %>
 <%= link_to 'Edit', edit_job_path(@job), class: "ui button blue medium" %>
 <%end %>
+<% end %>
 </div>
 </div>
 

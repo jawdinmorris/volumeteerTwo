@@ -95,14 +95,13 @@ user =  User.create(
   city: 'Brisbane',
   country: 'Australia',
   postcode: '4000',
-  remote_image_url: 'https://scontent.fbne5-1.fna.fbcdn.net/v/t1.0-9/18839230_919471018195235_2269214241441016113_n.jpg?_nc_cat=0&oh=1394d60d2448f7473b78d829eb136f9f&oe=5B94971C'
+  remote_image_url: 'https://scontent.fbne5-1.fna.fbcdn.net/v/t1.0-9/18839230_919471018195235_2269214241441016113_n.jpg?_nc_cat=0&oh=1394d60d2448f7473b78d829eb136f9f&oe=5B94971C',
+  skills: [
+    Skill.create({name: "Reading"}),
+    Skill.create({name: "Software Development"}),
+    Skill.create({name: "Personal Finance"})
+]
 )
-SkillsUser.create(user: user, skill: @skills.sample)
-puts "added skill one"
-SkillsUser.create(user: user, skill: @skills.sample)
-puts "added skill two"
-SkillsUser.create(user: user, skill: @skills.sample)
-puts "added skill three"
 
 user = User.create(
   email: 'clarestrongman@hotmail.com',
@@ -116,14 +115,13 @@ user = User.create(
   city: 'Brisbane',
   country: 'Australia',
   postcode: '4000',
-  remote_image_url: 'https://scontent.fbne5-1.fna.fbcdn.net/v/t1.0-9/13428513_10153796298628510_5525896659966173410_n.jpg?_nc_cat=0&oh=346c031e3b18216d54a41a189de6c4e3&oe=5B9789AD'
+  remote_image_url: 'https://scontent.fbne5-1.fna.fbcdn.net/v/t1.0-9/13428513_10153796298628510_5525896659966173410_n.jpg?_nc_cat=0&oh=346c031e3b18216d54a41a189de6c4e3&oe=5B9789AD',
+  skills: [
+    Skill.create({name: "Science"}),
+    Skill.create({name: "Petting Cats"}),
+    Skill.create({name: "Cuddling Cats"})
+]
 )
-SkillsUser.create(user: user, skill: @skills.sample)
-puts "added skill one"
-SkillsUser.create(user: user, skill: @skills.sample)
-puts "added skill two"
-SkillsUser.create(user: user, skill: @skills.sample)
-puts "added skill three"
 
 user = User.create(
   email: 'glenpearce@mail.com',
@@ -137,14 +135,13 @@ user = User.create(
   city: 'Australia',
   country: 'Australia',
   postcode: '4064',
-  remote_image_url: 'https://scontent.fbne5-1.fna.fbcdn.net/v/t1.0-9/12794415_10153924484619029_5712528431469762721_n.jpg?_nc_cat=0&oh=ddddd9ec7024c9ab54bb8c18730ce958&oe=5B961139'
+  remote_image_url: 'https://scontent.fbne5-1.fna.fbcdn.net/v/t1.0-9/12794415_10153924484619029_5712528431469762721_n.jpg?_nc_cat=0&oh=ddddd9ec7024c9ab54bb8c18730ce958&oe=5B961139',
+  skills: [
+    Skill.create({name: "Singing"}),
+    Skill.create({name: "Guitar"}),
+    Skill.create({name: "Dancing"})
+]
 )
-SkillsUser.create(user: user, skill: @skills.sample)
-puts "added skill one"
-SkillsUser.create(user: user, skill: @skills.sample)
-puts "added skill two"
-SkillsUser.create(user: user, skill: @skills.sample)
-puts "added skill three"
 
 user = User.create(
   email: 'cjones@mail.com',
@@ -158,14 +155,13 @@ user = User.create(
   city: 'Brisbane',
   country: 'Australia',
   postcode: '4051',
-  remote_image_url: 'https://scontent.fbne5-1.fna.fbcdn.net/v/t1.0-9/26219266_10215071959177928_3904250392346412240_n.jpg?_nc_cat=0&oh=3ecb3613e37a804068f746f22ea52604&oe=5B592D28'
+  remote_image_url: 'https://scontent.fbne5-1.fna.fbcdn.net/v/t1.0-9/26219266_10215071959177928_3904250392346412240_n.jpg?_nc_cat=0&oh=3ecb3613e37a804068f746f22ea52604&oe=5B592D28',
+  skills: [
+    Skill.create({name: "Drawing"}),
+    Skill.create({name: "Eating"}),
+    Skill.create({name: "Sleeping"})
+]
 )
-SkillsUser.create(user: user, skill: @skills.sample)
-puts "added skill one"
-SkillsUser.create(user: user, skill: @skills.sample)
-puts "added skill two"
-SkillsUser.create(user: user, skill: @skills.sample)
-puts "added skill three"
 
 user = User.create(
   email: 'nathannorris@mail.com',
@@ -179,13 +175,96 @@ user = User.create(
   city: 'Brisbane',
   country: 'Australia',
   postcode: '4059',
-  remote_image_url: 'https://scontent.fbne5-1.fna.fbcdn.net/v/t1.0-9/19510269_10209824666429632_320617566554035735_n.jpg?_nc_cat=0&oh=9d151578562510a6f624dec834943bb5&oe=5B84C1CB'
+  remote_image_url: 'https://scontent.fbne5-1.fna.fbcdn.net/v/t1.0-9/19510269_10209824666429632_320617566554035735_n.jpg?_nc_cat=0&oh=9d151578562510a6f624dec834943bb5&oe=5B84C1CB',
+  skills: [
+    Skill.create({name: "Consultancy"}),
+    Skill.create({name: "Playing Switch"}),
+    Skill.create({name: "Watching SBS"})
+]
 )
-SkillsUser.create(user: user, skill: @skills.sample)
-puts "added skill one"
-SkillsUser.create(user: user, skill: @skills.sample)
-puts "added skill two"
-SkillsUser.create(user: user, skill: @skills.sample)
-puts "added skill three"
+
 
 # JOBS CREATION (COUNT 8)
+
+  Job.create(
+    user_id: 2,
+    name: "Kool Koalas",
+    description: "An event in Brisbane to celebrate Koalas.",
+    street: '40 Charlotte Street',
+    city: 'Brisbane',
+    country: 'Australia',
+    postcode: '4000',
+    volunteers_needed: 1)
+  Job.create(
+        user_id: 2,
+    name: "Visit The Koalas",
+    description: "Need volunteers to chaperone guests around venue space.",
+    street: '40 Charlotte Street',
+    city: 'Brisbane',
+    country: 'Australia',
+    postcode: '4000',
+    volunteers_needed: 2)
+  Job.create(
+        user_id: 2,
+    name: "Awareness Campaign",
+    description: "An event to raise awareness for our cause.",
+    street: '40 Charlotte Street',
+    city: 'Brisbane',
+    country: 'Australia',
+    postcode: '4000',
+    volunteers_needed: 2)
+      Job.create(
+            user_id: 1,
+        name: "Charity Fundraiser",
+        description: "An event in Brisbane to raise funds.",
+        street: '18 Charlotte Street',
+        city: 'Brisbane',
+        country: 'Australia',
+        postcode: '4000',
+        volunteers_needed: 3 )
+      Job.create(
+        user_id: 1,
+        name: "Awareness Campaign",
+        description: "An event to raise awareness for our cause.",
+        street: '18 Charlotte Street',
+        city: 'Brisbane',
+        country: 'Australia',
+        postcode: '4000',
+        volunteers_needed: 2 )
+      Job.create(
+        user_id: 1,
+        name: "Happy Birthday Bean",
+        description: "An event in Brisbane to help celebrate Bean's birthday and make him feel like a champ.",
+        street: '18 Charlotte Street',
+        city: 'Brisbane',
+        country: 'Australia',
+        postcode: '4000',
+        volunteers_needed: 3)
+
+          Job.create(
+            user_id: 3,
+            name: "How to Fundraise",
+            description: "An information night to educate people on fundraising. Need three people.",
+            street: '333 Ann Street',
+            city: 'Brisbane',
+            country: 'Australia',
+            postcode: '4000',
+            volunteers_needed: 3)
+          Job.create(
+            user_id: 3,
+            name: "Charity Fundraisers",
+            description: "Need volunteers to chaperone guests around venue space.",
+            street: '333 Ann Street',
+            city: 'Brisbane',
+            country: 'Australia',
+            postcode: '4000',
+            volunteers_needed: 3)
+          Job.create(
+            user_id: 3,
+            name: "Charity Event",
+            description: "I've run out of ideas lets face it.",
+            street: '333 Ann Street',
+            city: 'Brisbane',
+            country: 'Australia',
+            postcode: '4000',
+            volunteers_needed: 1)
