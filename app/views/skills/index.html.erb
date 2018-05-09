@@ -1,17 +1,19 @@
-<h1> <%= current_user.full_name %>'s skills page </h1>
+<div class = "ui very padded container segment">
+<h1> <%= current_user.full_name.pluralize %> Skills </h1>
 
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Delete?</th>
-  </tr>
+<div class="ui grid">
   <% @skills.each do |skill| %>
-  <tr>
-    <td><%= skill.name %></td>
-    <td><%= link_to 'Delete',  skill,  method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-  <% end %>
-</table>
+  <div class="four wide column">
+    <div class="ui buttons">
+  <button class="ui button"><%= skill.name %></button>
+  <button class="ui button"><%= link_to 'x',  skill,  method: :delete, data: { confirm: 'Are you sure?' } %></button>
+  </div>
+</div>
 
-<%= link_to 'New Skill?', new_skill_path %>
+  <% end %>
+</div>
+<br>
+<%= link_to 'New Skill?', new_skill_path, class: "ui big blue button" %>
+
+</div>
