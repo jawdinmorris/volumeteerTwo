@@ -1,30 +1,39 @@
 <p id="notice"><%= notice %></p>
+<div class = "ui very padded container segment">
 
+  <div class="ui grid">
+    <div class="six wide column">
 <h1> <%= @job.name %> </h1>
-<h2> By <%= @job.user.business_name %> </h2>
-<h2> <%= @job.user.email %> <h2>
-
-<p>
-  <strong>Description:</strong> </br>
-  <%= @job.description %>
-</p>
+</div>
+<div class = "ten wide column">
+  <h2> By <%= link_to "#{@job.user.business_name.upcase}", @job.user %> </h2>
+</div>
+</div>
+<div class="ui grid">
+  <div class="six wide column">
 <iframe
-  width="600"
-  height="450"
+  width="300"
+  height="300"
   frameborder="0" style="border:0"
   src="https://www.google.com/maps/embed/v1/place?key=<%=ENV['MAPS_KEY']%>
     &q=<%=@job.latitude%>,<%=@job.longitude%>" allowfullscreen>
 </iframe>
+</div>
+<div class = "ten wide column">
 <p>
   <strong>Address:</strong> </br>
   <%= @job.full_address %>.
 </p>
 
+<p>
+  <strong>Description:</strong> </br>
+  <%= @job.description %>
+</p>
 
 
 <h3> Volunteers (<%= @job.volunteers_needed %> needed) </h3>
 <% @volunteers.each do |volunteer| %>
-<p> <%= volunteer.full_name %>
+<p> <%= link_to "#{volunteer.full_name}", volunteer %> </h2>
 <% if volunteer == current_user || current_user == @job.user %>
 <sup> <%= link_to 'Withdraw', volunteer_remove_jobs_path(:volunteer => volunteer.id, :job => @job.id) %> </sup>
 <% end %>
@@ -34,9 +43,11 @@
 <% unless @volunteers.include?(current_user) || current_user.has_role?(:charity) || @job.volunteers_needed == 0 %>
    <%= link_to 'Express Interest', volunteer_jobs_path(:job => @job.id) %>
 <% end %>
-
 <% if @job.user_id == current_user.id %>
-<%= link_to 'Edit', edit_job_path(@job) %>
+<%= link_to 'Edit', edit_job_path(@job), class: "ui button blue medium" %>
 <%end %>
+</div>
+</div>
 
-<%= link_to 'Back', jobs_path %>
+
+</div>

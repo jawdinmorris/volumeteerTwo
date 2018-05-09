@@ -1,24 +1,62 @@
 <p id="notice"><%= notice %></p>
-<h1> <%= @user.full_name %> </h1>
-<%= image_tag @user.image_url , size: "100x150"%>
-<h3> About Me: </h3>
-<div> <%= @user.bio %>
-<h3> Further Details: </h3>
-<p> <strong> Email: </strong> <%= @user.email %> </p>
-<p> <strong> Address: </strong> <%= @user.full_address %> </p>
-<h3> Skills: </h3>
-<% @skills.each do |skill| %>
-<p><%=  skill.name  %> </p>
-<%end%>
 
+<div class = "ui very padded container segment">
+
+<div class="ui grid">
+  <div class="six wide column">
+    <div>
+    <%= image_tag(@user.image_url, :class => "ui centered medium circular image")%>
+  </div>
+  <% if @user == current_user  %>
+  <br>
+  <%= link_to 'Edit Profile', edit_user_registration_path(@user), class: "fluid ui blue small button center align" %>
+  <% end %>
+ </div>
+  <div class = "ten wide column">
+    <h1> <%= @user.full_name %> </h1>
+
+    <h3> About Me: </h3>
+    <div> <%= @user.bio %>  </div>
+    <h3> Further Details: </h3>
+    <p> <strong> Email: </strong> <%= @user.email %> </p>
+    <p> <strong> Address: </strong> <%= @user.full_address %> </p>
+
+  <h3> Skills: </h3>
+  <div class="ui grid">
+  <% @skills.each do |skill| %>
+  <div class="four wide column">
+  <p><%=  skill.name  %> </p>
+</div>
+  <%end%>
+</div>
+  <% if @user == current_user  %>
+  <div class="ui center aligned">
+    <br>
+  <%= link_to 'Edit Skills', skills_path,class: "ui center small blue button" %>
+</div>
+  <%end %>
+</div>
+</div>
+<div class="ui grid">
+  <div class="sixteen wide column">
 <h3> Events: </h3>
+<div class="ui grid">
 <% @jobs.each do |job| %>
-<p><%= link_to "#{job.name}", job_path(job) %></p>
+<div class="five wide column">
+<p><strong><%=  job.name  %></strong></p>
+</div>
+<div class="five wide column">
+<p><%=  job.user.business_name  %> </p>
+</div>
+<div class="six wide column">
+<p><%= link_to "View Job..", job_path(job) %></p>
 <%end%>
+</div>
+</div>
+</div>
+</div>
 
 
-<% if @user == current_user  %>
-<%= link_to 'Edit Skills', skills_path %>
-<%= link_to 'Edit Profile', edit_user_registration_path(@user) %>
-<% end %>
-<%= link_to 'Back', users_path %>
+
+
+</div>

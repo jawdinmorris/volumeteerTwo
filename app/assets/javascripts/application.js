@@ -11,7 +11,5 @@
 // about supported directives.
 //
 //= require rails-ujs
-//= require jquery
 //= require turbolinks
 //= require_tree .
-//= require semantic-ui
