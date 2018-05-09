@@ -35,12 +35,13 @@ def assign_chosen_role
   if self.has_role? :volunteer
     self.volunteer_cap = 0
     self.job_cap = 0
+    puts "Volunteer"
     self.save
     puts "Youre a volunteer"
-  elsif self.has_role :premium
+  elsif self.has_role? :premium
     self.volunteer_cap = 8
     self.job_cap = 6
-    puts "Charity"
+    puts "Premium"
     self.save
   elsif self.has_role? :charity
     self.volunteer_cap = 4
