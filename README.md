@@ -32,7 +32,7 @@
 
   ![alt text][survey_pic]
 
-  [survey_pic]:app/assets/images/survey.png "Survey Results"
+  [survey_pic]:docs/images/survey.png "Survey Results"
 
 
 ## PROBLEM SOLUTION
@@ -49,20 +49,20 @@
 
 ![alt text][userStories]
 
-[userStories]:app/assets/images/userStories.png "User Stories for project"
+[userStories]:docs/images/userStories.png "User Stories for project"
 
 ![alt text][userStoriesExtra]
 
-[userStoriesExtra]:app/assets/images/userStoriesExtra.PNG "Non-MVP User Stories for project"
+[userStoriesExtra]:docs/images/userStoriesExtra.PNG "Non-MVP User Stories for project"
 ## WORKFLOW
 ### USER INTERACTION DIAGRAM
 ![alt text][volunteerFlow]
 
-[volunteerFlow]:app/assets/images/volunteerFlow.png "Volunteer flow for project"
+[volunteerFlow]:docs/images/volunteerFlow.png "Volunteer flow for project"
 
 ![alt text][charityFlow]
 
-[charityFlow]:app/assets/images/charityFlow.png "charityFlow for project"
+[charityFlow]:docs/images/charityFlow.png "charityFlow for project"
 
 ## WIREFRAMES
 
@@ -70,18 +70,18 @@
    DESKTOP
    ![alt text][wireframe]
 
-   [wireframe]:app/assets/images/wireframes.png "Wireframes for project"
+   [wireframe]:docs/images/wireframes.png "Wireframes for project"
 
    MOBILE  
    ![alt text][wireframes]
 
-   [wireframes]:app/assets/images/mobileUserWireframe.PNG "Mobile Wireframes for project"
+   [wireframes]:docs/images/mobileUserWireframe.PNG "Mobile Wireframes for project"
 
 
 ## ERD
 ![alt text][erd_pic]
 
-[erd_pic]:app/assets/images/erd.PNG "ERD"
+[erd_pic]:docs/images/erd.PNG "ERD"
 
 
 ## DESIGN DECISIONS
@@ -91,13 +91,13 @@
 
    ![alt text][lorax_pic]
 
-   [lorax_pic]:app/assets/images/lorax.PNG "Lorax"
+   [lorax_pic]:docs/images/lorax.PNG "Lorax"
    As such the primary colour chosen was blue. A lighter shade of blue is hopefully going to remind users of child-like story books and paintings. Blues and greens are also proven to be calming and work well with those that are short-sighted.
 
 ## AGILE WORKFLOW
    ![alt text][agile_pic]
 
-   [agile_pic]:app/assets/images/agileFlow.PNG "Agile Timetable"
+   [agile_pic]:docs/images/agileFlow.PNG "Agile Timetable"
 
 
 
