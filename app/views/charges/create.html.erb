@@ -1,1 +1,61 @@
-<h2>Thanks, you paid <strong>$5.00</strong>!</h2>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NewVolumeteer</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/semantic.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <!-- NAVBAR -->
+   <div class="ui menu">
+     <%= link_to "Volumeteer", root_path, class: "header item" %>
+     <%= link_to "Jobs", jobs_path, class: "item" %>
+     <div class="right menu">
+       <% if current_user.nil? %>
+        <%= link_to "Login", new_user_session_path, class: "item" %>
+        <%= link_to "Register", new_user_registration_path, class: "item" %>
+       <% else %>
+        <%= link_to "Profile", user_path(current_user.id), class: "item" %>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "item" %>
+       <% end %>
+     </div>
+   </div>
+
+    <h1 class ="ui centered"> You are now a premium member! You can post twice as many ads and ask for twice as many volunteers! wow. </h1>
+    <div class="ui inverted vertical footer segment">
+    <div class="ui container">
+      <div class="ui stackable inverted divided equal height stackable grid">
+        <div class="three wide column">
+          <h4 class="ui inverted header">Quick links</h4>
+          <div class="ui inverted link list">
+            <%= link_to "Login", new_user_session_path, class: "item" %>
+            <%= link_to "Register", new_user_registration_path, class: "item" %>
+            <%= link_to "Home", root_path, class: "item" %>
+            <%= link_to "Jobs", jobs_path, class: "item" %>
+          </div>
+        </div>
+        <div class="three wide column">
+          <h4 class="ui inverted header">Development</h4>
+          <div class="ui inverted link list">
+            <a href="https://github.com/jawdinmorris/volumeteerTwo" class="item">Github</a>
+            <a href="https://twitter.com/JawdinMorris" class="item">Twitter</a>
+          </div>
+        </div>
+        <div class="seven wide column">
+          <h4 class="ui inverted header">Thank You For Using Volumeteer</h4>
+          <p>Together average australians are making a true difference.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </body>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.1/dist/semantic.min.js"></script>
+</html>

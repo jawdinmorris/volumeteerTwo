@@ -9,8 +9,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  after_create :assign_chosen_role
-  # , :send_welcome_email
+  after_create :assign_chosen_role, :send_welcome_email
 
   mount_uploader :image, UserImageUploader
   geocoded_by :full_address

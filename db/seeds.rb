@@ -7,38 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-# SKILL CREATION (COUNT 10)
-Skill.create(
-  name: "Reading"
-)
-Skill.create(
-  name: "Finance"
-)
-Skill.create(
-  name: "Shopping"
-)
-Skill.create(
-  name: "Science"
-)
-Skill.create(
-  name: "Happiness"
-)
-Skill.create(
-  name: "Business"
-)
-Skill.create(
-  name: "Art"
-)
-Skill.create(
-  name: "Singing"
-)
-Skill.create(
-  name: "Development"
-)
-Skill.create(
-  name: "Problem Solving"
-)
-@skills = Skill.all
+
 #CHARITY CREATION (COUNT: 3)
 User.create(
   email: 'charityone@email.com',
@@ -184,7 +153,7 @@ user = User.create(
 )
 
 
-# JOBS CREATION (COUNT 8)
+# JOBS CREATION (COUNT 9)
 
   Job.create(
     user_id: 2,
