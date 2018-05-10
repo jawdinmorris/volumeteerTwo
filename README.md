@@ -13,9 +13,8 @@ Run ```rails db:migrate``` in terminal.
 Find and edit the .env file in the root of the directory, then add your own ENV variables:    
 ```CLOUDINARY_KEY=  
 CLOUDINARY_SECRET=
-MAILGUN_DOMAIN=
-MAILGUN_USER=
-MAILGUN_PASSWORD=
+GMAIL_USERNAME=''
+GMAIL_PASSWORD=''
 STRIPE_PUBLISHABLE_KEY=
 STRIPE_SECRET_KEY=
 MAPS_KEY=```
