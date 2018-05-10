@@ -84,6 +84,10 @@ class UsersController < ApplicationController
   def authenticate_charity
     redirect_to root_path, alert: 'You must be a charity to do this.' unless current_user.has_role?(:charity)
   end
+
+  def authenticate_admin
+    redirect_to root_path, alert: 'You must be an admin to do this.' unless current_user.has_role?(:admin)
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
