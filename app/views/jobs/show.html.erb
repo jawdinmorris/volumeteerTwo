@@ -3,10 +3,10 @@
 
   <div class="ui grid">
     <div class="six wide column">
-<h1> <%= @job.name %> </h1>
+<h1> <%= @job.name.titleize %> </h1>
 </div>
 <div class = "ten wide column">
-  <h2> By <%= link_to "#{@job.user.business_name.upcase}", @job.user %> </h2>
+  <h2> By <%= link_to "#{@job.user.business_name.titleize}", @job.user %> </h2>
 </div>
 </div>
 <div class="ui grid">

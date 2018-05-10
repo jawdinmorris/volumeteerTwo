@@ -6,7 +6,7 @@
   <% @skills.each do |skill| %>
   <div class="four wide column">
     <div class="ui buttons">
-  <button class="ui button"><%= skill.name %></button>
+  <button class="ui button"><%= skill.name.titleize %></button>
   <button class="ui button"><%= link_to 'x',  skill,  method: :delete, data: { confirm: 'Are you sure?' } %></button>
   </div>
 </div>

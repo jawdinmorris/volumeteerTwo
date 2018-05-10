@@ -36,7 +36,7 @@
     </div>
 
     <div class="content">
-      <div class="header"><%= link_to "#{job.name}", job%> </div>
+      <div class="header"><%= link_to "#{job.name}".titleize, job%> </div>
         <%=link_to job do %>
       <div class="description">
       <%= job.description%>
@@ -45,7 +45,7 @@
     </div>
     <div class="extra content">
       <span class="right floated">
-        <%= job.city %>
+        <%= job.city.titleize %>
       </span>
       <span>
         <i class="user icon"></i>
