@@ -39,10 +39,7 @@ gem 'dotenv-rails'
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'simple_form'
-
-gem 'mailgun-ruby', '~>1.1.6'
 gem 'geocoder'
-
 gem 'stripe'
 gem 'ransack'
 

@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show]
   before_action :authenticate_user!
   before_action :authenticate_charity, only: [:premium_purchase]
+  before_action :authenticate_admin, only: [:index]
   # GET /users
   # GET /users.json
   def index
