@@ -88,9 +88,6 @@ POSTGRES_PASSWORD =
 
 [userStories]:docs/images/userStories.png "User Stories for project"
 
-![alt text][userStoriesExtra]
-
-[userStoriesExtra]:docs/images/userStoriesExtra.PNG "Non-MVP User Stories for project"
 ## WORKFLOW
 ### USER INTERACTION DIAGRAM
 ![alt text][volunteerFlow]
