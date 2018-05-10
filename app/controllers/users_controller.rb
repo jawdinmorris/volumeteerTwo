@@ -15,11 +15,11 @@ class UsersController < ApplicationController
   def show
     if @user.has_role? :volunteer
       @skills = @user.skills.all
-      @jobs =  Job.includes(:users).where(users: { id: @user.id })
+      @jobs = Job.includes(:users).where(users: { id: @user.id })
       render 'volunteer_show'
 
-  elsif @user.has_role? :charity || :premium_charity
-      @jobs = Job.where("user_id = ? ", @user.id)
+    elsif @user.has_role? :charity || :premium_charity
+      @jobs = Job.where('user_id = ? ', @user.id)
       render 'charity_show'
   end
   end
@@ -30,8 +30,7 @@ class UsersController < ApplicationController
   end
 
   # GET /users/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /users
   # POST /users.json
@@ -75,9 +74,7 @@ class UsersController < ApplicationController
 
   def premium_purchase
     @user = User.find(params[:user])
-    if @user.has_role? :charity
-      @user.add_role(:premium)
-    end
+    @user.add_role(:premium) if @user.has_role? :charity
     redirect_to @user
   end
 
@@ -88,14 +85,16 @@ class UsersController < ApplicationController
   def authenticate_admin
     redirect_to root_path, alert: 'You must be an admin to do this.' unless current_user.has_role?(:admin)
   end
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def user_params
-      params.require(:user).permit(:first_name, :last_name, :company_name, :bio, :phone, :street, :city, :country, :postcode, :chosen_role, :image)
-    end
+  private
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :company_name, :bio, :phone, :street, :city, :country, :postcode, :chosen_role, :image)
+  end
 end

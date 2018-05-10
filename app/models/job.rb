@@ -4,9 +4,7 @@ class Job < ApplicationRecord
   geocoded_by :full_address
   after_validation :geocode
 
-def full_address
-  "#{street}, #{city}, #{country}, #{postcode.to_s}"
-end
-
-
+  def full_address
+    "#{street}, #{city}, #{country}, #{postcode}"
+  end
 end

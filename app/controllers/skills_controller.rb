@@ -18,14 +18,13 @@ class SkillsController < ApplicationController
     redirect_to action: :index
   end
 
-
   def destroy
     @skill = current_user.skills.find(params[:id])
     @skill.destroy
     redirect_to action: :index
   end
 
-private
+  private
 
   def skill_params
     params.require(:skill).permit(:name)

@@ -1,8 +1,8 @@
 class JobsController < ApplicationController
-  before_action :set_job, only: [:show, :edit, :update, :destroy]
+  before_action :set_job, only: %i[show edit update destroy]
   before_action :authenticate_user!
-  skip_before_action :authenticate_user!, only: [:show, :index]
-  before_action :authenticate_volunteer, only: [:volunteer, :volunteer_remove]
+  skip_before_action :authenticate_user!, only: %i[show index]
+  before_action :authenticate_volunteer, only: %i[volunteer volunteer_remove]
 
   # GET /jobs
   # GET /jobs.json
@@ -24,8 +24,7 @@ class JobsController < ApplicationController
   end
 
   # GET /jobs/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /jobs
   # POST /jobs.json
@@ -79,7 +78,7 @@ class JobsController < ApplicationController
   end
 
   def volunteer_remove
-    id =  request.url.chars.last
+    id = request.url.chars.last
 
     @volunteer = User.find(params[:volunteer])
     @job = Job.find(params[:job])
@@ -94,13 +93,14 @@ class JobsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_job
-      @job = Job.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def job_params
-      params.require(:job).permit(:name, :description, :street, :city, :country, :postcode, :volunteers_needed )
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_job
+    @job = Job.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def job_params
+    params.require(:job).permit(:name, :description, :street, :city, :country, :postcode, :volunteers_needed)
+  end
 end

@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-
-
-
   resources :jobs do
     collection do
       get :volunteer, :volunteer_remove
