@@ -11,16 +11,17 @@
 Run ```bundle install``` in terminal.  
 Run ```rails db:migrate``` in terminal.  
 Find and edit the .env file in the root of the directory, then add your own ENV variables:    
-```CLOUDINARY_KEY=  
-CLOUDINARY_SECRET=
-GMAIL_USERNAME=''
-GMAIL_PASSWORD=''
-STRIPE_PUBLISHABLE_KEY=
-STRIPE_SECRET_KEY=
-MAPS_KEY=```
-
-
-
+```
+CLOUDINARY_KEY =  
+CLOUDINARY_SECRET =  
+GMAIL_USERNAME =
+GMAIL_PASSWORD =
+STRIPE_SECRET_KEY =
+STRIPE_PUBLISHABLE_KEY =
+MAPS_KEY =
+POSTGRES_USER =
+POSTGRES_PASSWORD = 
+```
 # Design Document
 ## Design Contents
 * Problem Definition  
