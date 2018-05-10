@@ -1,7 +1,24 @@
+## DEPLOYMENT LINK  
+  http://volumeteer.herokuapp.com/
+# TECH SUMMARY
+
+* Ruby version   
+  * ruby 2.3.3
+* Rails version   
+  * rails 5.1.6
+* Key Gems
+  * Devise - User Authentication
+  * Rolify - User Authorisation
+  * Carrierwave - Image Upload
+  * Cloudinary - Image Compression & Storage
+  * Geocoder - Help with Google Map API
+  * Ransack - Easy Searching
+  * Stripe - User Payment
+  * Rubocop - Code Review
+  * Rails erd - ERD Generation  
+
 # INSTALLATION
 
-* Ruby version  
-~ruby 2.3.3p222
 
 * Configuration  
   You will need to create .env file found in the root folder as they have been excluded in .gitignore for security.  
@@ -20,7 +37,7 @@ STRIPE_SECRET_KEY =
 STRIPE_PUBLISHABLE_KEY =
 MAPS_KEY =
 POSTGRES_USER =
-POSTGRES_PASSWORD = 
+POSTGRES_PASSWORD =
 ```
 # Design Document
 ## Design Contents
@@ -37,7 +54,8 @@ POSTGRES_PASSWORD =
   * Mobile
 * ERD
 * Design Decisions
-* Agile Workflow Timetable
+* Agile Workflow Timetable  
+* Code Review
 
 
 ## PROBLEM DEFINITION
@@ -64,6 +82,7 @@ POSTGRES_PASSWORD =
 
 ## USER STORIES
   User stories were created using Trello. The original stories comprise of MVP features. Aswell as one column of non-mvp features.
+  https://trello.com/b/guzJHlrp/agile-workflow
 
 ![alt text][userStories]
 
@@ -116,3 +135,15 @@ POSTGRES_PASSWORD =
    ![alt text][agile_pic]
 
    [agile_pic]:docs/images/agileFlow.PNG "Agile Timetable"
+
+## CODE REVIEW  
+  I requested for classmates to review my code using Slack.
+  ![alt text][code_review_pic]
+
+  [code_review_pic]:docs/images/codeReview.png "Code Review"
+
+  I also used Rubocop to help with code styling, to try and test it's true power I avoided using any code editor plug-ins to prettify code.
+
+  ![alt text][rubocop_pic]
+
+  [rubocop_pic]:docs/images/rubocop.png "Rubocop"
