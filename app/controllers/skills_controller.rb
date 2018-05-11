@@ -2,6 +2,7 @@ class SkillsController < ApplicationController
   before_action :authenticate_user!
   def index
     @skills = current_user.skills.all
+    @user = current_user
   end
 
   def new

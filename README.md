@@ -56,6 +56,8 @@ POSTGRES_PASSWORD =
 * Design Decisions
 * Agile Workflow Timetable  
 * Code Review
+  * User Testing
+* Future Features
 
 
 ## PROBLEM DEFINITION
@@ -133,7 +135,7 @@ POSTGRES_PASSWORD =
 
    [agile_pic]:docs/images/agileFlow.PNG "Agile Timetable"
 
-## CODE REVIEW  
+## CODE REVIEW
   I requested for classmates to review my code using Slack.
   ![alt text][code_review_pic]
 
@@ -144,3 +146,13 @@ POSTGRES_PASSWORD =
   ![alt text][rubocop_pic]
 
   [rubocop_pic]:docs/images/rubocop.png "Rubocop"
+
+### USER TESTING
+  I set up two batches of user tests, the first by "Regular Users", this comprised of close friends and family, it was aimed to establish how the general public will see the app. Secondly there were "Tech Users", comprised of classmates, this was to see if there were any obvious technical issues with the app.
+  Unfortunately, no one within the Charity or Not-For-Profit industry were personally accessible to help test.
+  General public advised that mobile UI needs improvement on some devices, particularly the jobs page. I implemented their changes to remove the registration button after a user has correctly signed up or in.
+  The technical user group's main issue was navigation in some pages, as such more 'back' links were added to the application.
+
+## Future Features
+  Planned future features, since the inception of Volumeteer, have been messaging, time details on an event and an admin dashboard.
+  Some features that user testing have recommended include more user stats such as hours volunteered and emails for when volunteer status changes.

@@ -7,7 +7,11 @@
         Volumeteer Australia
       </h1>
       <h2>Many Things With Many Hands</h2>
+    <% if current_user.nil? %>
       <div><%= link_to "Register <i class='right arrow icon'></i>".html_safe, new_user_registration_path, class: "ui huge primary button" %> </div>
+<% else %>
+<div><%= link_to "Jobs <i class='right arrow icon'></i>".html_safe, jobs_path, class: "ui huge primary button" %> </div>
+<% end %>
     </div>
   </div>
 
