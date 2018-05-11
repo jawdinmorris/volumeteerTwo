@@ -135,6 +135,9 @@ POSTGRES_PASSWORD =
 
    [agile_pic]:docs/images/agileFlow.PNG "Agile Timetable"
 
+   I feel that my original agile workflow was very well estimated. Unfortunately, I had to restart the entire application two days in due to recurring issues with Devise, I decided it was best to rethink my architecture and restart as opposed to sinking more losses fixing issues.
+   As such I finished the entire project one day later than expected. Having this agile workflow however allowed me to understand where I had gone wrong and most importantly I could visualise where I was and that made it easier to plan future flow.
+
 ## CODE REVIEW
   I requested for classmates to review my code using Slack.
   ![alt text][code_review_pic]
