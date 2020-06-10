@@ -92,7 +92,7 @@ GEM
       multipart-post (>= 1.2, < 3)
     ffi (1.9.23)
     ffi (1.9.23-x86-mingw32)
-    geocoder (1.4.7)
+    geocoder (1.6.1)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     http-cookie (1.0.3)
